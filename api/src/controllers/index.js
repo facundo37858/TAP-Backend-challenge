@@ -18,8 +18,9 @@ const addGame=async(req,res,next)=>{
             await State.create({
                 code:parseInt(state.code),
                 description:state.description,
-                gameId:newgame.id
-            })
+                gameId:newgame.id,
+                
+            }).then(state=> newgame.setState(state))
 
             return res.send({menssage:'game created'})
 

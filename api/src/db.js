@@ -39,7 +39,7 @@ sequelize.models = Object.fromEntries(capsEntries);
 
 const { Game,State } = sequelize.models
 
-Game.hasMany(State ,{ as: 'state' });
+Game.hasOne(State ,{ as: 'state' });
 State.belongsTo(Game);
 
 module.exports={
